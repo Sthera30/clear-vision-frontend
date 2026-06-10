@@ -24,7 +24,7 @@ function EditAboutUs() {
 
 
         try {
-            const res = await axios.get(`http://localhost:5000/getAboutUsById?id=${id}`)
+            const res = await axios.get(`https://clear-vision-backend.onrender.com/getAboutUsById?id=${id}`)
 
             if (res.data.success) {
                 setData(res.data.data.aboutUs)
@@ -50,7 +50,7 @@ function EditAboutUs() {
 
         try {
 
-            const { data } = await axios.post("http://localhost:5000/upload", formData)
+            const { data } = await axios.post("https://clear-vision-backend.onrender.com/upload", formData)
 
             setUploading(false)
 
@@ -76,7 +76,7 @@ function EditAboutUs() {
 
         try {
 
-            const res = await axios.put("http://localhost:5000/updateAboutUs", { id, profilePicture, aboutUsHeading, aboutUsDescription })
+            const res = await axios.put("https://clear-vision-backend.onrender.com/updateAboutUs", { id, profilePicture, aboutUsHeading, aboutUsDescription })
 
             if (res.data.success) {
                 toast.success(res.data.message)

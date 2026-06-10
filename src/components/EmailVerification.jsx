@@ -26,7 +26,7 @@ function EmailVerification() {
 
         try {
 
-            const res = await axios.post(`http://localhost:5000/verifyEmail`, { email })
+            const res = await axios.post(`https://clear-vision-backend.onrender.com/verifyEmail`, { email })
 
             if (res.data.success) {
                 toast.success(res.data.message)

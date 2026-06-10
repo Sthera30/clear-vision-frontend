@@ -23,7 +23,7 @@ function AddDoctor() {
 
         try {
 
-            const res = await axios.post("http://localhost:5000/addDoctor", { profilePicture, doctorName, doctorEmail, doctorExperience, doctorFee, doctoraddressLine1, doctorQualification, doctorSpeciality, doctoraddressLine2, aboutDoctor, password, confirmPassword })
+            const res = await axios.post("https://clear-vision-backend.onrender.com/addDoctor", { profilePicture, doctorName, doctorEmail, doctorExperience, doctorFee, doctoraddressLine1, doctorQualification, doctorSpeciality, doctoraddressLine2, aboutDoctor, password, confirmPassword })
 
             if (res.data.success) {
                 toast.success(res.data.message)
@@ -51,7 +51,7 @@ function AddDoctor() {
 
         try {
 
-            const { data } = await axios.post("http://localhost:5000/upload", formData)
+            const { data } = await axios.post("https://clear-vision-backend.onrender.com/upload", formData)
 
             setUploading(false)
 

@@ -14,7 +14,7 @@ function ListDoctor() {
 
     async function handle_remove(id) {
         try {
-            const res = await axios.delete(`http://localhost:5000/removeDoctor?id=${id}`);
+            const res = await axios.delete(`https://clear-vision-backend.onrender.com/removeDoctor?id=${id}`);
 
             if (res.data.success) {
                 toast.success(res.data.message);
@@ -42,7 +42,7 @@ function ListDoctor() {
         const fetchDoctors = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:5000/doctorsSearch?search=${searchTerm}`
+                    `https://clear-vision-backend.onrender.com/doctorsSearch?search=${searchTerm}`
                 );
                 setDoctor(response.data.data);
 

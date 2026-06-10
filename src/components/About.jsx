@@ -17,7 +17,7 @@ function About() {
 
         try {
 
-            const res = await axios.get(`http://localhost:5000/getAllAboutUs`)
+            const res = await axios.get(`https://clear-vision-backend.onrender.com/getAllAboutUs`)
 
             if (res.data.success) {
                 setAboutUs(res.data.data.aboutUs)
@@ -43,7 +43,7 @@ function About() {
 
         try {
 
-            const res = await axios.delete(`http://localhost:5000/removeAboutUs?id=${id}`)
+            const res = await axios.delete(`https://clear-vision-backend.onrender.com/removeAboutUs?id=${id}`)
 
             if (res.data.success) {
                 toast.success(res.data.message)

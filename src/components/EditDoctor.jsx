@@ -26,7 +26,7 @@ function EditDoctor() {
 
         try {
 
-            const { data } = await axios.post("http://localhost:5000/upload", formData)
+            const { data } = await axios.post("https://clear-vision-backend.onrender.com/upload", formData)
 
             setUploading(false)
 
@@ -53,7 +53,7 @@ function EditDoctor() {
 
         try {
 
-            const res = await axios.put("http://localhost:5000/updateDoctor", { id, profilePicture, doctorName, doctorEmail, doctorExperience, doctorFee, doctoraddressLine1, doctorQualification, doctorSpeciality, doctoraddressLine2, aboutDoctor, password, confirmPassword })
+            const res = await axios.put("https://clear-vision-backend.onrender.com/updateDoctor", { id, profilePicture, doctorName, doctorEmail, doctorExperience, doctorFee, doctoraddressLine1, doctorQualification, doctorSpeciality, doctoraddressLine2, aboutDoctor, password, confirmPassword })
 
             if (res.data.success) {
                 toast.success(res.data.message)
@@ -74,7 +74,7 @@ function EditDoctor() {
 
         try {
 
-            const res = await axios.get(`http://localhost:5000/getDoctorById?id=${id}`)
+            const res = await axios.get(`https://clear-vision-backend.onrender.com/getDoctorById?id=${id}`)
 
             if (res.data.success) {
                 setData(res.data.data.doctor)

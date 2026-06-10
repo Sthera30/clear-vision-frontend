@@ -22,7 +22,7 @@ function Login() {
 
         try {
             //SEND COOKIES
-            const res = await axios.post("http://localhost:5000/login", { email, password }, { withCredentials: true })
+            const res = await axios.post("https://clear-vision-backend.onrender.com/login", { email, password }, { withCredentials: true })
 
             if (res.data.error) {
                 toast.error(res.data.error)
@@ -32,7 +32,7 @@ function Login() {
 
                 toast.success(res.data.message)
 
-                const res2 = await axios.get(`http://localhost:5000/getUser`, { withCredentials: true })
+                const res2 = await axios.get(`https://clear-vision-backend.onrender.com/getUser`, { withCredentials: true })
 
 
 

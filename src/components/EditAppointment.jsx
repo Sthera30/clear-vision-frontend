@@ -23,7 +23,7 @@ function EditAppointment() {
 
         try {
 
-            const res = await axios.get(`http://localhost:5000/getAppointmentById?id=${id}`)
+            const res = await axios.get(`https://clear-vision-backend.onrender.com/getAppointmentById?id=${id}`)
 
             if (res.data.success) {
                 setData(res.data.data.appointment)
@@ -45,7 +45,7 @@ function EditAppointment() {
 
         try {
 
-            const res = await axios.get(`http://localhost:5000/getDocAvailabilityTimeByDocName?doctorName=${doctorName}`)
+            const res = await axios.get(`https://clear-vision-backend.onrender.com/getDocAvailabilityTimeByDocName?doctorName=${doctorName}`)
 
             if (res.data.success) {
                 setDocTime(res.data.data.docTimeSlot)
@@ -65,7 +65,7 @@ function EditAppointment() {
 
         try {
 
-            const res = await axios.get(`http://localhost:5000/getDoctorAvailabilityByName?doctorName=${doctorName}`)
+            const res = await axios.get(`https://clear-vision-backend.onrender.com/getDoctorAvailabilityByName?doctorName=${doctorName}`)
 
             if (res.data.success) {
                 setDateTime(res.data.data.doctorAvailability)
@@ -94,7 +94,7 @@ function EditAppointment() {
 
         try {
 
-            const res = await axios.put(`http://localhost:5000/updateAppointment/${id}`, {
+            const res = await axios.put(`https://clear-vision-backend.onrender.com/updateAppointment/${id}`, {
                 appointmentDate: formattedDate,
                 appointmentTime,
                 appointmentType: data?.appointmentType,

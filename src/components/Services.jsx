@@ -28,7 +28,7 @@ function Services() {
 
         try {
 
-            const res = await axios.get("http://localhost:5000/getAllServices")
+            const res = await axios.get("https://clear-vision-backend.onrender.com/getAllServices")
 
             if (res.data.success) {
                 setService(res.data.data.services)
@@ -51,7 +51,7 @@ function Services() {
 
         try {
 
-            const res = await axios.delete(`http://localhost:5000/removeServices?id=${id}`)
+            const res = await axios.delete(`https://clear-vision-backend.onrender.com/removeServices?id=${id}`)
 
             if (res.data.success) {
                 toast.success(res.data.message)

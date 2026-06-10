@@ -18,7 +18,7 @@ function ChangePassword() {
 
         try {
 
-            const res = await axios.put(`http://localhost:5000/changePassword`, { password, confirmPassword, email: localStorage.getItem("email") })
+            const res = await axios.put(`https://clear-vision-backend.onrender.com/changePassword`, { password, confirmPassword, email: localStorage.getItem("email") })
 
             if (res.data.success) {
                 toast.success(res.data.message)

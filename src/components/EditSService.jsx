@@ -18,7 +18,7 @@ function EditSService() {
 
         try {
 
-            const res = await axios.get(`http://localhost:5000/getServicesById?id=${id}`)
+            const res = await axios.get(`https://clear-vision-backend.onrender.com/getServicesById?id=${id}`)
 
             if (res.data.success) {
                 setData(res.data.data.services)
@@ -54,7 +54,7 @@ function EditSService() {
 
         try {
 
-            const { data } = await axios.post("http://localhost:5000/upload", formData)
+            const { data } = await axios.post("https://clear-vision-backend.onrender.com/upload", formData)
 
             setUploading(false)
 
@@ -80,7 +80,7 @@ function EditSService() {
 
         try {
 
-            const res = await axios.put(`http://localhost:5000/updateServices`, { id, profilePicture, serviceHeading, serviceDescription })
+            const res = await axios.put(`https://clear-vision-backend.onrender.com/updateServices`, { id, profilePicture, serviceHeading, serviceDescription })
 
             if (res.data.success) {
                 toast.success(res.data.message)

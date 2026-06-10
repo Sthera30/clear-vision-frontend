@@ -26,7 +26,7 @@ function MyAppointments() {
 
             if (!user?.fullName) return
 
-            const res = await axios.get(`http://localhost:5000/myAppointments?userName=${user.fullName}`)
+            const res = await axios.get(`https://clear-vision-backend.onrender.com/myAppointments?userName=${user.fullName}`)
 
             if (res.data.success) {
                 setMyAppointments(res.data.data.appointments)
@@ -49,7 +49,7 @@ function MyAppointments() {
 
         try {
 
-            const res = await axios.get(`http://localhost:5000/doctorProfilePic?doctorName=${doctorName}`)
+            const res = await axios.get(`https://clear-vision-backend.onrender.com/doctorProfilePic?doctorName=${doctorName}`)
 
             if (res.data.success) {
                 setDoctorProfile(res.data.data.doctor)

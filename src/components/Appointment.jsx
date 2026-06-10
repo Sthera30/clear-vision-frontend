@@ -30,7 +30,7 @@ function Appointmenr() {
 
     try {
 
-      const res = await axios.get(`http://localhost:5000/getDoctorById?id=${id}`)
+      const res = await axios.get(`https://clear-vision-backend.onrender.com/getDoctorById?id=${id}`)
 
       if (res.data.success) {
         setData(res.data.data.doctor)
@@ -53,7 +53,7 @@ function Appointmenr() {
 
     try {
 
-      const res = await axios.get(`http://localhost:5000/getDoctorAvailabilityByName?doctorName=${doctorName}`)
+      const res = await axios.get(`https://clear-vision-backend.onrender.com/getDoctorAvailabilityByName?doctorName=${doctorName}`)
 
       if (res.data.success) {
         setDoc(res.data.data.doctorAvailability);
@@ -76,7 +76,7 @@ function Appointmenr() {
 
     try {
 
-      const res = await axios.get(`http://localhost:5000/getDocAvailabilityTimeByDocName?doctorName=${doctorName}`)
+      const res = await axios.get(`https://clear-vision-backend.onrender.com/getDocAvailabilityTimeByDocName?doctorName=${doctorName}`)
 
       if (res.data.success) {
         setDocTimeSlot(res.data.data.docTimeSlot)
@@ -104,7 +104,7 @@ function Appointmenr() {
 
     try {
 
-      const res = await axios.post('http://localhost:5000/addAppointment', { doctorName: data?.doctorName, userName: user?.fullName, appointmentDate, appointmentTime, appointmentType, reasonForVisit })
+      const res = await axios.post('https://clear-vision-backend.onrender.com/addAppointment', { doctorName: data?.doctorName, userName: user?.fullName, appointmentDate, appointmentTime, appointmentType, reasonForVisit })
 
       if (res.data.success) {
         toast.success(res.data.message)

@@ -22,7 +22,7 @@ function ManageAppointment() {
         const fetchUsers = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:5000/usersSearch?search=${searchTerm}`
+                    `https://clear-vision-backend.onrender.com/usersSearch?search=${searchTerm}`
                 );
                 setAppointments(response.data.data);
                 

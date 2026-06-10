@@ -13,7 +13,7 @@ function Doctor() {
 
         try {
 
-            const res = await axios.get("http://localhost:5000/getAllDoctor")
+            const res = await axios.get("https://clear-vision-backend.onrender.com/getAllDoctor")
 
             if (res.data.success) {
                 setDoctor(res.data.data.doctors)

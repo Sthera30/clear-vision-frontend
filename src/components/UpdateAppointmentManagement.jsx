@@ -28,7 +28,7 @@ function UpdateAppointmentManagement() {
 
         try {
 
-            const res = await axios.put(`http://localhost:5000/updateUserAppointment`, { id, Status, doctorName: appoint?.doctorName, appointmentDate: appoint?.appointmentDate, appointmentTime: appoint?.appointmentTime, appointmentType: appoint?.appointmentType, fullName: appoint?.userName, email: user?.email })
+            const res = await axios.put(`https://clear-vision-backend.onrender.com/updateUserAppointment`, { id, Status, doctorName: appoint?.doctorName, appointmentDate: appoint?.appointmentDate, appointmentTime: appoint?.appointmentTime, appointmentType: appoint?.appointmentType, fullName: appoint?.userName, email: user?.email })
 
             if (res.data.success) {
                 toast.success(res.data.message)
@@ -49,7 +49,7 @@ function UpdateAppointmentManagement() {
 
         try {
 
-            const res = await axios.get(`http://localhost:5000/getAppointmentById?id=${id}`)
+            const res = await axios.get(`https://clear-vision-backend.onrender.com/getAppointmentById?id=${id}`)
 
             if (res.data.success) {
                 setAppoint(res.data.data.appointment)
